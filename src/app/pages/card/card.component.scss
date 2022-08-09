@@ -14,14 +14,16 @@
   margin-top: 2rem;
   font-size: x-large;
 }
-.card-item{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+.card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 .example-card {
-  
-  margin: 1rem;
+  margin: 0.5rem;
   border-radius: 25px;
   box-shadow: 0 0 0 1px rgba(224, 4, 235, 0.1), 0 2px 3px rgba(182, 3, 218, 0.2);
 }
@@ -51,29 +53,28 @@
 }
 //fin paralax
 //formulario
-.container{
+.container {
   display: flex;
   align-items: center;
   padding: 1rem 5rem;
-    
 }
-.form__element{
+.form__element {
   padding: 5px 0px 25px 2px;
   width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.item{
+.item {
   flex: 1 1 auto;
 }
-.form{
+.form {
   width: 100%;
 }
-.container__button{
+.container__button {
   margin: 0 auto;
   display: block;
   width: 40%;
   margin-top: 4rem;
 }
-button{
+mat-raised-button {
   width: 100%;
 }

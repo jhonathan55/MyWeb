@@ -1,7 +1,15 @@
 .example-spacer {
   flex: 1 1 auto;
 }
-
+.title{
+  z-index:2;
+  position: relative;
+}
+.toolbar{
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
 .logo {
   display: flex;
   margin-right: 10px;

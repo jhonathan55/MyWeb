@@ -1,6 +1,6 @@
-<ng-container class="container">
+
   <h2 class="precios">Planes</h2>
-  <mat-grid-list class="cards d-flex" cols="3" rowHeight="3:4">
+  <mat-grid-list class="cards" [cols]="colSize" [rowHeight]="rowHeight">
 
     <mat-grid-tile class="card-item">
       <mat-card class="example-card">
@@ -33,7 +33,7 @@
       </mat-card>
     </mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile class="card-item">
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title-group>
@@ -61,7 +61,7 @@
       </mat-card>
     </mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile class="card-item">
       <mat-card class="example-card">
 
         <mat-card-header>
@@ -97,35 +97,39 @@
     <p class="">Tu Web Profesional</p>
   </div>
   <!--fin Parallax-->
- 
-  <mat-grid-list class="" cols="2" rowHeight="2:1">
-    <mat-grid-tile>
-      <h3>Redes Sociales</h3>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <div class="container">
-        <form class="form item" [formGroup]="contacFrm">
-          <h3>Contacto</h3>
-          <mat-form-field class="form__element">
-            <input matInput placeholder="Nombre" id="name" formControlName="name" 
-            [class]="isValidField('name')" />
-            <mat-error *ngIf="contacFrm.get('name')?.errors">
-              Ingresa tu nombre por favor
-          </mat-error>
-        </mat-form-field>
-  
-        <mat-form-field class="form__element">
-            <input matInput placeholder="Email" id="email" formControlName="email" 
-            [class]="isValidField('email')" />
-            <mat-error *ngIf="contacFrm.get('email')?.errors">
-             Ingresa un email valido por favor
-          </mat-error>
-        </mat-form-field>
-        
-        </form>
-      </div>
-      
-    </mat-grid-tile>
-  </mat-grid-list>
 
-</ng-container>
+
+
+
+  <div class="container">
+    <form class="form item" [formGroup]="contacFrm">
+      <h3>Contacto</h3>
+      <mat-form-field class="form__element">
+        <input matInput placeholder="Nombre" id="name" formControlName="name" [class]="isValidField('name')" />
+        <mat-error *ngIf="contacFrm.get('name')?.errors">
+          Ingresa tú nombre por favor por favor
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form__element">
+        <input matInput placeholder="Email" id="email" formControlName="email" [class]="isValidField('email')" />
+        <mat-error *ngIf="contacFrm.get('email')?.errors">
+          Ingresa un email valido por favor
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form__element">
+        <input matInput placeholder="Telefono" id="phone" formControlName="phone" [class]="isValidField('phone')" />
+        <mat-error *ngIf="contacFrm.get('phone')?.errors">
+          Ingresa un telefono valido por favor
+        </mat-error>
+      </mat-form-field>
+
+
+      <button mat-raised-button color="primary" [disabled]="contacFrm.invalid" (click)="sendMessage()">Enviar</button>
+
+    </form>
+
+  </div>
+  <br><br><br><br><br>
+
