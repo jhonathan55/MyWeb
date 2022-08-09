@@ -1,0 +1,53 @@
+<!--Carousel-->
+
+<div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="0">
+      <div class="overlay-image" style="background-image:url(../../assets/1.jpg);"></div>
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1>IntelSoft SpA</h1>
+          <p>Diseño y posicionamiento web profesional.</p>
+          <button mat-flat-button color="primary">Comprar</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="carousel-item" data-interval="0">
+      <div class="overlay-image" style="background-image:url(../../assets/2.jpg);"></div>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Web con carro de compras y pago electronico</h1>
+          <p>Diseño personalizado con profesionales en el área</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" data-interval="0">
+      <div class="overlay-image" style="background-image:url(../../assets/3.jpg);"></div>
+      <div class="container">
+        <div class="carousel-caption text-end">
+          <h1>Unete, se parte de nosotros</h1>
+          <p>Y has crecer tu negocio</p>
+          <button mat-flat-button color="accent">Contacto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">siguiente</span>
+  </button>
+</div>
+
+<!--End Carousel-->
+<app-card></app-card>

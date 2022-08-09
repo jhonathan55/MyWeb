@@ -1,0 +1,35 @@
+.carousel-item{
+    height: 39rem;
+    background: rgb(250, 242, 250);
+    color: rgb(255, 255, 255);
+    position: relative;
+  }
+  .container{
+    position: absolute;
+    bottom:0;
+    left: 0%;
+    right: 0;
+    padding-bottom: 50px;
+
+  }
+  .overlay-image {
+  position: absolute;
+  bottom:0;
+  left: 0%;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  }
+
+  //card
+  .example-card {
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+    margin: 20px;
+   
+  }
+
+  
