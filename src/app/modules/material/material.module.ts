@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 //reactive forms
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const MATERIAL_MODULES = [
@@ -29,7 +30,8 @@ const MATERIAL_MODULES = [
   MatInputModule,
   MatCardModule,
   MatMenuModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatDialogModule
 ];
 
 @NgModule({

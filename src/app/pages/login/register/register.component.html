@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 mx-auto">
+            <div class="card-header bg-warning" style="border: 1px solid black;">
+                <h3 class="text-center fs-2" style="color: #f0f2f7;" ><strong>Register</strong></h3> 
+                <img src="../../../assets/logosb1.png" class=""  style="max-width:35%; height:auto; display:block; margin: auto;">
+                <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="m-3">
+
+                    <div class="form-floating mb-3">
+                        <!--formControlName captura las variables del form al TS tambien se declaran en  TS-->
+                        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com"
+                            formControlName="email" [class]="isValidField('email')">
+                        <label for="floatingEmail">Email address</label>
+                        <div class="invalid-feedback">
+                            
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <!--formControlName captura las variables del form al TS tambien se declaran en  TS-->
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                            formControlName="password" [class]="isValidField('password')">
+                        <label for="floatingPassword">Password</label>
+                        <div class="invalid-feedback">
+                            <span *ngIf="!registerForm.get('password')?.errors">
+                                Debes ingresar una contraseña de 6 caracteres como minimo.
+                            </span>
+                            
+                        </div>
+                    </div>
+                   
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-outline-light mt-2">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Register</font>
+                            </font>
+                        </button>
+                    </div>
+                </form>
+                <p class="text-info text-center " >
+                    <a [routerLink]="['/login']">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit; color: #f0f2f7">Login
+                            </font>
+                        </font>
+                        
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</div>
