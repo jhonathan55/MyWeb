@@ -16,6 +16,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 //reactive forms
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//client module
+import { HttpClientModule } from '@angular/common/http';
 const MATERIAL_MODULES = [
   MatGridListModule,
   MatSidenavModule,
@@ -31,7 +33,8 @@ const MATERIAL_MODULES = [
   MatCardModule,
   MatMenuModule,
   MatProgressBarModule,
-  MatDialogModule
+  MatDialogModule,
+  HttpClientModule
 ];
 
 @NgModule({

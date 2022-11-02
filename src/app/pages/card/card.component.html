@@ -1,25 +1,22 @@
 <h2 class="precios">Planes</h2>
 <div class="container">
+  <ng-container *ngFor="let item of products$ |async ">
   <mat-card class="example-card">
     <mat-card-header>
       <mat-card-title-group>
-        <mat-card-title>Plan S Precio CLP:200.000.-</mat-card-title>
+        <mat-card-title>{{item?.name}}</mat-card-title>
         <mat-card-subtitle>Pymes </mat-card-subtitle>
       </mat-card-title-group>
     </mat-card-header>
-
     <mat-card-content class="">
       <p>
-        Plan inicial para pyme que recien estan iniciando su negocio o es su primera web.
-        Página web diseñada en WordPress con diseño de logo, paleta de colores, correo corporativo, dominio propio,
-        hosting, seguridad.
+        {{item?.description}}
       </p>
     </mat-card-content>
-    
     <mat-card-actions align="end">
       <button mat-flat-button>Ver mas</button>
       <span class="example-spacer"></span>
-      <button mat-flat-button color="primary">
+      <button mat-flat-button color="primary" (click)="comprar(item)">
         <mat-icon>add_shopping_cart</mat-icon>
         Comprar
       </button>
@@ -28,56 +25,7 @@
       <!--<mat-progress-bar mode="indeterminate"></mat-progress-bar>-->
     </mat-card-footer>
   </mat-card>
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Plan S Precio CLP:200.000.-</mat-card-title>
-        <mat-card-subtitle>Pymes </mat-card-subtitle>
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content class="">
-      <p>
-        Plan inicial para pyme que recien estan iniciando su negocio o es su primera web.
-        Página web diseñada en WordPress con diseño de logo, paleta de colores, correo corporativo, dominio propio,
-        hosting, seguridad.
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end" >
-      <button mat-flat-button>Ver mas</button>
-      <span class="example-spacer"></span>
-      <button mat-flat-button color="primary">
-        <mat-icon>add_shopping_cart</mat-icon>
-        Comprar
-      </button>
-
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Plan S Precio CLP:200.000.-</mat-card-title>
-        <mat-card-subtitle>Pymes </mat-card-subtitle>
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content class="">
-      <p>
-        Plan inicial para pyme que recien estan iniciando su negocio o es su primera web.
-        Página web diseñada en WordPress con diseño de logo, paleta de colores, correo corporativo, dominio propio,
-        hosting, seguridad.
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-flat-button>Ver mas</button>
-      <span class="example-spacer"></span>
-      <button mat-flat-button color="primary">
-        <mat-icon>add_shopping_cart</mat-icon>
-        Comprar
-      </button>
-
-    </mat-card-actions>
-  </mat-card>
+</ng-container>
 </div>
 
 <!--Parallax-->

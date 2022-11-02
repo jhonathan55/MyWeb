@@ -8,10 +8,7 @@ export interface UserI {
     createdAt?: Date;
     updateAt?: Date;
     resetToken?: string;
-
 }
-
-
 export interface UserResponseI extends UserI {
     message?: string,
     token?: string,

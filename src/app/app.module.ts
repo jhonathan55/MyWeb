@@ -15,9 +15,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { InterceptorProvider } from './intercestors/interceptor';
+import { ShoppingComponent } from './pages/shopping/shopping.component';
 @NgModule({
   declarations: [
-    AppComponent,FooterComponent,ToolbarComponent
+    AppComponent,FooterComponent,ToolbarComponent, ShoppingComponent
   ],
   imports: [
     BrowserModule,

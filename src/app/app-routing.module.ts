@@ -6,7 +6,9 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
   { path: 'register', loadChildren: () => import('./pages/login/register/register-routing.module').then(m => m.RegisterRoutingModule) },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'checkout', loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule) },
+  { path: '*', redirectTo: '/home', pathMatch: 'full' },
+
 ];
 
 @NgModule({

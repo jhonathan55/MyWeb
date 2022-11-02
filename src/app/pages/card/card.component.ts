@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ProductService } from '../services/product.service';
+import { ProductI } from '../interfaces/product-interface';
+import { Observable, of } from 'rxjs';
+import { ShoppingCartService } from '../services/shopping-cart.service';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -10,52 +14,34 @@ export class CardComponent implements OnInit {
   private isValidEmail = /\S+@\S+\.\S+/;
   public colSize = 3;
   public rowHeight = '2:3';
-  public isMobile: boolean = false;
-  public isTable: boolean = false;
-  constructor(
-    private fb: FormBuilder,
-    breakpointObserver: BreakpointObserver
-  ) {
-
-    breakpointObserver.observe([
-      Breakpoints.Handset,
-    ]).subscribe(result => {
-      if (result.matches) {
-        console.log(result.matches);
-        
-        this.isMobile = true;
-        this.colSize = 1;
-        this.rowHeight = '550px';
-      } else {
-        this.isMobile = false;
-        this.colSize = 3;
-        this.rowHeight = '2:3';
-      }
-
-      /* if (this.isMobile) {
-         this.colSize=1;
-         this.rowHeight='550px';
-       }else if(this.isTable){
-         this.colSize=3;
-         this.rowHeight='700px';
-       } 
-       else {
-         this.colSize=3;
-         this.rowHeight = '2:3';
-       }*/
-    }
-    );
-  }
-
+  products$:Observable<ProductI[]>;
+  
   contacFrm = this.fb.group({
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.pattern(this.isValidEmail)]],
     phone: ['', [Validators.required]],
-   
-
   });
 
+  constructor(
+    private fb: FormBuilder,
+    private productSvc: ProductService,
+    private shoppingCartSvc: ShoppingCartService,
+  ) { }
+
+ 
+
   ngOnInit(): void {
+   this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productSvc.getAllProducts().subscribe((products:ProductI[]) => {
+      this.products$ =of(products);
+    });
+  }
+
+  comprar(product:ProductI): void {
+   this.shoppingCartSvc.updateCart(product);
   }
 
   //validación de form
