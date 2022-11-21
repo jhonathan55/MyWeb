@@ -14,8 +14,8 @@ export class CardComponent implements OnInit {
   private isValidEmail = /\S+@\S+\.\S+/;
   public colSize = 3;
   public rowHeight = '2:3';
-  products$:Observable<ProductI[]>;
-  
+  products$: Observable<ProductI[]>;
+
   contacFrm = this.fb.group({
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.pattern(this.isValidEmail)]],
@@ -28,20 +28,26 @@ export class CardComponent implements OnInit {
     private shoppingCartSvc: ShoppingCartService,
   ) { }
 
- 
+
 
   ngOnInit(): void {
-   this.getProducts();
+     this.getProducts();
+    // this.productSvc.getAllProducts().subscribe((res:ProductI[]) => {
+    //   this.products$ = of(res);
+      
+    // });
   }
 
   getProducts(): void {
     this.productSvc.getAllProducts().subscribe((products:ProductI[]) => {
       this.products$ =of(products);
+      console.log(this.products$.subscribe(res=>console.log(res)));
+      
     });
   }
 
-  comprar(product:ProductI): void {
-   this.shoppingCartSvc.updateCart(product);
+  comprar(product: ProductI): void {
+    this.shoppingCartSvc.updateCart(product);
   }
 
   //validación de form

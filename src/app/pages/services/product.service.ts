@@ -16,7 +16,7 @@ export class ProductService {
 
   getAllProducts():Observable<ProductI[] | void> {
     
-  this.products$ = this.http.get<ProductI[]>(environment.api_url + '/product');
+  this.products$ = this.http.get<ProductI[]>(environment.api_url + '/products');
   return this.products$;
 
   }

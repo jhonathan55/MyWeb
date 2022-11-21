@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: 'register', loadChildren: () => import('./pages/login/register/register-routing.module').then(m => m.RegisterRoutingModule) },
   { path: 'checkout', loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule) },
   { path: '*', redirectTo: '/home', pathMatch: 'full' },
-
 ];
 
 @NgModule({
