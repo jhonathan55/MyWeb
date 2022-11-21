@@ -14,6 +14,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 //reactive forms
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //client module
@@ -34,7 +36,9 @@ const MATERIAL_MODULES = [
   MatMenuModule,
   MatProgressBarModule,
   MatDialogModule,
-  HttpClientModule
+  HttpClientModule,
+  MatPaginatorModule,
+  MatTableModule
 ];
 
 @NgModule({

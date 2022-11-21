@@ -16,6 +16,10 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { InterceptorProvider } from './intercestors/interceptor';
 import { ShoppingComponent } from './pages/shopping/shopping.component';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,FooterComponent,ToolbarComponent, ShoppingComponent
@@ -30,6 +34,9 @@ import { ShoppingComponent } from './pages/shopping/shopping.component';
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     
   ],
   providers: [
