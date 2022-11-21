@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ProductI } from '../interfaces/product-interface';
 
@@ -15,8 +15,7 @@ export class ProductService {
   ) { }
 
   getAllProducts():Observable<ProductI[] | void> {
-    
-  this.products$ = this.http.get<ProductI[]>(environment.api_url + '/products');
+  this.products$ = this.http.get<ProductI[]>(environment.api_url + '/products')
   return this.products$;
 
   }

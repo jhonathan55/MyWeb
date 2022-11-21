@@ -34,14 +34,12 @@ export class CardComponent implements OnInit {
      this.getProducts();
     // this.productSvc.getAllProducts().subscribe((res:ProductI[]) => {
     //   this.products$ = of(res);
-      
     // });
   }
 
   getProducts(): void {
     this.productSvc.getAllProducts().subscribe((products:ProductI[]) => {
       this.products$ =of(products);
-      console.log(this.products$.subscribe(res=>console.log(res)));
       
     });
   }

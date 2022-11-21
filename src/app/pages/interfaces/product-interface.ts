@@ -15,7 +15,7 @@
 //     updateDateAt: Date;
 // }
 export interface ProductI {
-    id: string;
+    id: Object;
     name: string;
     description: string;
     qty: number;
